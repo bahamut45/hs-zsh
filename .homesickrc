@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+`
+
+if ! cat /etc/shells | grep -q zsh; then
+	apt-get install zsh -y
+fi
+
+if cat  /etc/shells | grep -q zsh; then
+	chsh -s /bin/zsh $USER
+fi
+
+`
+puts 'zsh installed!'
+
